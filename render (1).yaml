@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lavish-lspd-management
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DISCORD_TOKEN
+        fromService: # You'll set this in Render dashboard
+      - key: PORT
+        value: 10000
